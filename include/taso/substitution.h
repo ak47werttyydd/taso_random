@@ -197,6 +197,9 @@ public:
   void run(int depth, Graph* graph,
            std::priority_queue<Graph*, std::vector<Graph*>, GraphCompare>&,
            std::set<size_t>&, float threshold, int maxNumOps);
+  void run(int depth, Graph* graph,
+           std::vector<Graph*>&,
+           std::set<size_t>&, int maxNumOps);
   Graph* create_new_graph(Graph* graph);
   bool create_new_operator(const OpX* opx, Op& op);
 

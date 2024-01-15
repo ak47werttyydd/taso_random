@@ -11,7 +11,7 @@ endif()
 
 #include directories
 include_directories(${CMAKE_INCLUDE_PATH})
-include_directories(${CMAKE_BINARY_DIR}) # to include protobuf headeer files
+include_directories(${CMAKE_BINARY_DIR}) # to include protobuf header files
 include_directories("include")
 #include_directories("build")
 #include_directories("src/core")
@@ -22,8 +22,13 @@ set(TASO_LINK_LIBS ${CMAKE_DL_LIBS})
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 #Generate protobuf files
+#set(PROTOBUF_LIBRARY "/home/ruochen/anaconda3/envs/taso/lib/libprotobuf.so")
 find_package(Protobuf REQUIRED)
 message(STATUS "PROTOBUF=" ${PROTOBUF_LIBRARY})
+#message(STATUS "PROTOBUF_LIBRARY=${PROTOBUF_LIBRARY}")
+#message(STATUS "Protobuf_INCLUDE_DIR=${Protobuf_INCLUDE_DIR}")
+#message(STATUS "Protobuf_LIBRARIES=${Protobuf_LIBRARIES}")
+#message("PROTOBUF_INCLUDE_DIR is set to: ${PROTOBUF_INCLUDE_DIR}")
 include_directories(${PROTOBUF_INCLUDE_DIR})
 protobuf_generate_cpp(PROTO_CPPS PROTO_HDRS src/core/rules.proto)
 list(APPEND TASO_LINK_LIBS ${PROTOBUF_LIBRARY})
@@ -95,7 +100,7 @@ if (NOT "${USE_DNNL}" STREQUAL "OFF")
   endif()
 endif()
 
-add_library(taso_runtime SHARED ${TASO_SRCS})
+add_library(taso_runtime SHARED ${TASO_SRCS} include/taso/substitution.h include/taso/ops.h)
 
 set_target_properties(taso_runtime
   PROPERTIES CUDA_SEPARABLE_COMPILATION ON)

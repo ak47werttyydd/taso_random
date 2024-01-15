@@ -543,6 +543,13 @@ cdef class PyGraph:
         graph = ctypes.cast(<unsigned long long>new_graph, ctypes.c_void_p)
         return PyGraph(graph)
 
+    def randomGenerate(self,int budget):
+        cdef  vector[Graph*] new_graphs = self.p_graph.randomGenerate(budget)
+        cdef int idx
+        ls_new_graphs=[]
+        for idx in range(new_graphs.size()):
+            ls_new_graphs.append(PyGraph(ctypes.cast(<unsigned long long> new_graphs[idx], ctypes.c_void_p)))
+        return ls_new_graphs
     def get_operator_list(self):
         cdef Op ops[4192]
         cdef int numOps = self.p_graph.get_operator_list(ops, 4192)

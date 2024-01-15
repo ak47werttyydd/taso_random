@@ -1084,8 +1084,8 @@ void GraphXfer::unmatch(OpX* srcOp, Op op, Graph* graph)
 }
 
 void GraphXfer::run(int depth, Graph* graph,
-                    std::priority_queue<Graph*, std::vector<Graph*>, GraphCompare>& candidates,
-                    std::set<size_t>& hashmap, float threshold, int maxNumOps)
+                               std::priority_queue<Graph*, std::vector<Graph*>, GraphCompare>& candidates,
+                               std::set<size_t>& hashmap, float threshold, int maxNumOps)
 {
   //printf("run: depth(%d) srcOps.size(%zu) graph.size(%zu) candidates(%zu)\n", depth, srcOps.size(), graph->inEdges.size(), candidates.size());
   if (depth >= (int)srcOps.size()) {
@@ -1144,6 +1144,73 @@ void GraphXfer::run(int depth, Graph* graph,
         // Check mapOutput
         match(srcOp, op, graph);
         run(depth + 1, graph, candidates, hashmap, threshold, maxNumOps);
+        unmatch(srcOp, op, graph);
+      }
+    }
+  }
+}
+
+void GraphXfer::run(int depth, Graph* graph,
+                    std::vector<Graph*>& candidates,
+                    std::set<size_t>& hashmap, int maxNumOps)
+{
+  //printf("run: depth(%d) srcOps.size(%zu) graph.size(%zu) candidates(%zu)\n", depth, srcOps.size(), graph->inEdges.size(), candidates.size());
+  if (depth >= (int)srcOps.size()) {  //if check all srcOp
+    // Create dst operators
+    bool pass = true;
+    std::vector<OpX*>::const_iterator dstIt;
+    for (dstIt = dstOps.begin(); dstIt != dstOps.end(); dstIt++)
+      if (pass) {
+        OpX* dstOp = *dstIt;
+        pass = (pass & create_new_operator(dstOp, dstOp->mapOp));
+      }
+    if (!pass) return;
+    // Check that output tensors with external edges are mapped
+    std::map<Op, OpX*, OpCompare>::const_iterator opIt;
+    for (opIt = mappedOps.begin(); opIt != mappedOps.end(); opIt++) {
+      const std::set<Edge, EdgeCompare>& list = graph->outEdges[opIt->first];
+      std::set<Edge, EdgeCompare>::const_iterator it;
+      for (it = list.begin(); it != list.end(); it++)
+        if (mappedOps.find(it->dstOp) == mappedOps.end()) {
+          // dstOp is external, (srcOp, srcIdx) must be in mappedOutputs
+          TensorX srcTen;
+          srcTen.op = opIt->second;
+          srcTen.idx = it->srcIdx;
+          if (mappedOutputs.find(srcTen) == mappedOutputs.end()) {
+            pass = false;
+            return;
+          }
+        }
+    }
+    // Generate a new graph by applying xfer rule
+    Graph* newGraph = create_new_graph(graph);
+    // Check that the new graph should not have any loop
+    if (newGraph->has_loop()) {
+      //printf("Found a new graph with LOOP!!!!\n");
+      delete newGraph;
+      return;
+    }
+    // TODO: remove me for better performance
+    assert(newGraph->check_correctness());
+    if ((int)newGraph->inEdges.size() < maxNumOps) {
+      if (hashmap.find(newGraph->hash()) == hashmap.end()) { //newGraph is unique
+        hashmap.insert(newGraph->hash());
+        candidates.push_back(newGraph);
+      }
+    } else {
+      delete newGraph;
+    }
+  } else {  //recursion
+    OpX* srcOp = srcOps[depth];
+    std::map<Op, std::set<Edge, EdgeCompare>, OpCompare>::const_iterator it;
+    for (it = graph->inEdges.begin(); it != graph->inEdges.end(); it++) {
+      //printf("can_match(%d)\n", can_match(srcOp, it->first, graph));
+      if (can_match(srcOp, it->first, graph)
+          && (mappedOps.find(it->first) == mappedOps.end())) {
+        Op op = it->first;
+        // Check mapOutput
+        match(srcOp, op, graph);
+        run(depth + 1, graph, candidates, hashmap, maxNumOps);
         unmatch(srcOp, op, graph);
       }
     }

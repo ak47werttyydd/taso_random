@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TASO"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="taso_runtime">
+				<Option output="/home/ruochen/taso/cmake-build-debug/libtaso_runtime.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUSE_CUDNN"/>
+					<Add directory="/home/ruochen/taso/cmake-build-debug"/>
+					<Add directory="/home/ruochen/taso/include"/>
+					<Add directory="/home/ruochen/anaconda3/envs/taso2/include"/>
+					<Add directory="/usr/local/cuda-12.1/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 taso_runtime"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="taso_runtime/fast">
+				<Option output="/home/ruochen/taso/cmake-build-debug/libtaso_runtime.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DUSE_CUDNN"/>
+					<Add directory="/home/ruochen/taso/cmake-build-debug"/>
+					<Add directory="/home/ruochen/taso/include"/>
+					<Add directory="/home/ruochen/anaconda3/envs/taso2/include"/>
+					<Add directory="/usr/local/cuda-12.1/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 taso_runtime/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/ruochen/taso/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/ruochen/taso/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ruochen/taso/cmake-build-debug/rules.pb.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/cmake-build-debug/rules.pb.h.rule">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/include/taso/ops.h">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/include/taso/substitution.h">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/activation.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/batchnorm.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/broadcast_add.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/cast.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/concat.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/constant.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/conv2d.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/element.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/elementwise_unary.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/enlarge.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/fuse_conv_batchnorm.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/fuse_conv_batchnorm_alpha_var.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/fuse_conv_batchnorm_bias.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/graph_to_trt.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/matmul.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/merge_gconv.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/mul.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/noop.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/ops.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/pad.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/pool2d.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/reduce.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/reshape.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/resize.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/shape.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/slice.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/split.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/squeeze.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/substitution.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/topk.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/transpose.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/unsqueeze.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/core/where.cc">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/activation_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/batchnorm_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/broadcast_add_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/cast_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/concat_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/constant_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/conv2d_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/cuda_helper.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/element_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/elementwise_unary_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/enlarge_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/fuse_conv_batchnorm_alpha_var_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/fuse_conv_batchnorm_bias_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/fuse_conv_batchnorm_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/matmul_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/merge_gconv_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/mul_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/ops_cudnn.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/pad_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/pool2d_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/reduce_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/reshape_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/resize_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/shape_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/slice_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/squeeze_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/topk_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/transpose_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/unsqueeze_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/src/cudnn/where_kernel.cu">
+			<Option target="taso_runtime"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/config.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/ruochen/taso/cmake/FindCUDA.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
